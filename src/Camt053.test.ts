@@ -23,7 +23,7 @@ const camt053Data = {
                 Cd: "CLBD",
               },
             },
-            Amt: "1000",
+            Amt: { value: "1000" },
           },
         ],
       },

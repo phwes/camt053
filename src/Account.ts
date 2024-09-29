@@ -24,8 +24,7 @@ class Account {
       );
     const hasNegativeBalance = closingBalanceStatement.CdtDbtInd === "DR";
 
-    const closingBalance = parseFloat(closingBalanceStatement.Amt);
-
+    const closingBalance = parseFloat(closingBalanceStatement.Amt?.value);
     return hasNegativeBalance ? -closingBalance : closingBalance;
   }
 
