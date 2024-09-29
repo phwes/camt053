@@ -1,4 +1,6 @@
 class Account {
+  // Normally I would avoid using the class name in the attribute name
+  // If not standard, I would have used "id" instead of "accountNumber"
   accountNumber: string;
   currency: string;
   ownerName: string;
@@ -8,7 +10,7 @@ class Account {
     // Instructions pointed to Othr object, but I will assume we can use the Id directly
     // If not, create a new class or interface for Othr
     this.accountNumber =
-      camt053Data.Document.BkToCstmrStmt.Stmt.Acct.Id.Othr.Id;
+      camt053Data.Document.BkToCstmrStmt.Stmt.Acct.Id.Othr.Id.toString();
     this.currency = camt053Data.Document.BkToCstmrStmt.Stmt.Acct.Ccy;
     this.ownerName = camt053Data.Document.BkToCstmrStmt.Stmt.Acct.Ownr.Nm;
     this.balance = this.parseAccountBalance(camt053Data);
