@@ -30,6 +30,16 @@ class Transaction {
       throw new Error("Invalid Transaction data");
     }
   }
+
+  getPublicData() {
+    return {
+      transactionId: this.transactionId,
+      amount: this.amount,
+      currency: this.currency,
+      bookingDate: this.bookingDate,
+      remittanceInformation: this.remittanceInformation,
+    };
+  }
 }
 
 export default Transaction;

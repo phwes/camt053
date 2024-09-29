@@ -10,6 +10,10 @@ class Camt053 {
     this.account = new Account(camt053Data);
     this.transactions = Transaction.fromCamt053(camt053Data);
   }
+
+  getPublicTransactionsData() {
+    return this.transactions.map((transaction) => transaction.getPublicData());
+  }
 }
 
 export default Camt053;
