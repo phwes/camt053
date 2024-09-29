@@ -43,6 +43,15 @@ class Account {
     if (!this.balance)
       throw new Error(`Invalid Account balance: ${this.balance}`);
   }
+
+  getPublicData() {
+    return {
+      accountNumber: this.accountNumber,
+      currency: this.currency,
+      ownerName: this.ownerName,
+      balance: this.balance,
+    };
+  }
 }
 
 export default Account;
