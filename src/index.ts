@@ -1,6 +1,6 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import readXmlFile from "./utils/readXmlFile";
-import Camt053 from "./Camt053";
+import Camt053 from "./service/Camt053";
 import routes from "./routes";
 import attachCamtData from "./middleware/attachCamtData";
 
