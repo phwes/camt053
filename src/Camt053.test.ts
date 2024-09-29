@@ -26,6 +26,33 @@ const camt053Data = {
             Amt: { value: "1000" },
           },
         ],
+        Ntry: [
+          {
+            Amt: {
+              attr_Ccy: "EUR",
+              value: "100",
+            },
+
+            BookgDt: {
+              Dt: new Date(),
+            },
+            NtryDtls: {
+              RmtInf: "Test transaction",
+            },
+          },
+          {
+            Amt: {
+              attr_Ccy: "EUR",
+              value: "200",
+            },
+            BookgDt: {
+              Dt: new Date(),
+            },
+            NtryDtls: {
+              RmtInf: "Test transaction 2",
+            },
+          },
+        ],
       },
     },
   },
@@ -40,5 +67,9 @@ describe("Camt053", () => {
     expect(camt053.account.currency).toBe("EUR");
     expect(camt053.account.ownerName).toBe("John Doe");
     expect(camt053.account.balance).toBe(1000);
+    expect(camt053.transactions).toHaveLength(2);
+    expect(camt053.transactions[0].amount).toBe(100);
+    expect(camt053.transactions[0].currency).toBe("EUR");
+    expect(camt053.transactions[0].bookingDate).toBeInstanceOf(Date);
   });
 });
