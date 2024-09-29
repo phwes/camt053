@@ -5,6 +5,8 @@ const router = express.Router();
 // TODO: When more routes are added, split up into an index router file and multiple
 // route files corresponding to the REST objects
 
+// TODO: Add integrations tests (using supertest)
+
 router.get("/account/:accountId", (req, res) => {
   const accountId = req.params.accountId;
 
